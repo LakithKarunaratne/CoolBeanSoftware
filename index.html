@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <title>Cool Beans!</title>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="" />
+
+</head>
+
+<body>
+
+  <h1>You can Subscribe Here </h1>
+
+    <div id="paypal-button-container-P-9V9153829C218090YMFSI3QA"></div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AQfE57kv5V4Dfjm-h_xZ2wiRl8nJJo44UmLejmk2Ye_0N3YmaLQ4DgHSQS4-Pza2-SBIPnWVPvdgN_I8&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+    <script>
+    paypal.Buttons({
+        style: {
+            shape: 'pill',
+            color: 'silver',
+            layout: 'vertical',
+            label: 'subscribe'
+        },
+        createSubscription: function(data, actions) {
+            return actions.subscription.create({
+            /* Creates the subscription */
+            plan_id: 'P-9V9153829C218090YMFSI3QA'
+            });
+        },
+        onApprove: function(data, actions) {
+            alert(data.subscriptionID); // You can add optional success message for the subscriber here
+        }
+    }).render('#paypal-button-container-P-9V9153829C218090YMFSI3QA'); // Renders the PayPal button
+    </script>
+
+
+</body>
+
+</html>
